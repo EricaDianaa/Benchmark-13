@@ -14,11 +14,10 @@ namespace Benchmark_13
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idProdotto = (Convert.ToInt16(Request.QueryString["idProdotto"]));
-         
-
-            if (Session["ListaCarrello"] != null)
+            if (!IsPostBack)
             {
+              if (Session["ListaCarrello"] != null)
+             {
                 Session["NewList"] = Session["ListaCarrello"];
                 ListCarrello = (List<Prodotti>)Session["NewList"];
                 Session["ListaCarrello"] = null;
@@ -26,6 +25,11 @@ namespace Benchmark_13
                 Mostra1.DataSource = ListCarrello;
                 Mostra1.DataBind();
             }
+            }
+            int idProdotto = (Convert.ToInt16(Request.QueryString["idProdotto"]));
+         
+
+           
         }
 
         protected void Rimuovi_Click(object sender, EventArgs e)

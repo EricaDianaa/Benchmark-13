@@ -5,24 +5,24 @@
 
 
      <div class="container">
-     <div class="row">
-             <asp:Repeater ID="Mostra1" runat="server" ItemType="Benchmark_13.Prodotti">
+     <div class="row" >
+             <asp:Repeater ID="Mostra1"  runat="server" ItemType="Benchmark_13.Prodotti">
                <ItemTemplate> 
                  <div class="col col-sm-6 col-md-4 col-lg-3 ">   
-                   <div class="card" style="width: 18rem;">
-                   <img src="<%#Item.Image%>" class="card-img-top w-50" alt="...">
+                   <div class="card" >
+                   <img src="<%#Item.Image%>" class="card-img-top w-100" alt="...">
                        <div class="card-body w-50">
                          <h5 class="card-title"><%#Item.NomeProdotto%></h5>
                           <p class="card-text"><%#Item.Descrizione%></p>
                            <p class="card-text"><%#Item.Prezzo%>€</p>
-                           <asp:Button ID="Rimuovi" CssClass="btn btn-dagner" CommandArgument="<%#Item.Id %>" runat="server" Text="Rimuovi"  OnClick="Rimuovi_Click" />
+                           <asp:Button ID="Rimuovi" CssClass="btn btn-danger" CommandArgument="<%#Item.Id %>" runat="server" Text="Rimuovi"  OnClick="Rimuovi_Click" />
                            <p class="d-none" id="p" runat="server"><%#Item.Id %></p>
                        </div>
                        </div>
                     </div> 
                </ItemTemplate>
              </asp:Repeater>
-           <asp:Button ID="RimuoviTutto" runat="server" Text="Rimuovi tutto" OnClick="RimuoviTutto_Click"/>
+           <asp:Button ID="RimuoviTutto" CssClass="btn btn-danger" runat="server" Text="Rimuovi tutto" OnClick="RimuoviTutto_Click"/>
          <div id="div1" class="btn" runat="server"></div>  
          </div>
     

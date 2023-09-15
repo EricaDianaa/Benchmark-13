@@ -9,7 +9,7 @@
                 <asp:Repeater ID="Mostra" runat="server" ItemType="Benchmark_13.Prodotti">
                   <ItemTemplate> 
                     <div class="col col-sm-6 col-md-4 ">   
-                      <div class="card" style="width: 18rem;">
+                      <div class="card">
                       <img src="<%#Item.Image%>" class="card-img-top w-100 h-25" alt="...">
                           <div class="card-body w-50">
                             <h5 class="card-title "><%#Item.NomeProdotto%></h5>

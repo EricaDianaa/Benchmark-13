@@ -4,8 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
        
-    <div class="border bg-white">
-  <div id="Prod" runat="server">
+    <div class="border bg-white container d-flex justify-content-center flex-column w-50">
+  <div id="Prod" class="mx-auto " runat="server">
+
 
     </div>
         <asp:Button ID="Button1" CssClass="btn btn-info" runat="server" Text="Aggiungi al carello" OnClick="Button1_Click"/>

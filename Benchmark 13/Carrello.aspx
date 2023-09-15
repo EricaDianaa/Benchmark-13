@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Carrello.aspx.cs" Inherits="Benchmark_13.Carrello" %>
+﻿<%@ Page Title="" Language="C#" EnableEventValidation="false" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Carrello.aspx.cs" Inherits="Benchmark_13.Carrello" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -15,7 +15,7 @@
                          <h5 class="card-title"><%#Item.NomeProdotto%></h5>
                           <p class="card-text"><%#Item.Descrizione%></p>
                            <p class="card-text"><%#Item.Prezzo%>€</p>
-                           <asp:Button ID="Rimuovi" runat="server" Text="Rimuovi"  OnClick="Rimuovi_Click" />
+                           <asp:Button ID="Rimuovi" CssClass="btn btn-dagner" CommandArgument="<%#Item.Id %>" runat="server" Text="Rimuovi"  OnClick="Rimuovi_Click" />
                            <p class="d-none" id="p" runat="server"><%#Item.Id %></p>
                        </div>
                        </div>

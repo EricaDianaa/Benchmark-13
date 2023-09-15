@@ -11,6 +11,7 @@ namespace Benchmark_13
     {
         public static List<Prodotti> ListProdotto = new List<Prodotti>();
         public static List<Prodotti> ListCarrello = new List<Prodotti>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             int idProdotto = (Convert.ToInt16(Request.QueryString["idProdotto"]));
@@ -31,20 +32,23 @@ namespace Benchmark_13
         {
             int idProdotto = (Convert.ToInt16(Request.QueryString["idProdotto"]));
             Prodotti prod = new Prodotti();
-            for (int i = 0; i < ListCarrello.Count; i++)
+           Button button=(sender as  Button);
+            int id = Convert.ToInt32(button.CommandArgument);
+
+            foreach (Prodotti item in ListCarrello)
             {
-                if (ListCarrello[i].Id == idProdotto)
+                if (item.Id == id)
                 {
-                   ListCarrello.RemoveAt(i);
+                    ListCarrello.Remove(item);
+                    break;
                 }
             }
-
-
         }
 
         protected void RimuoviTutto_Click(object sender, EventArgs e)
         {
             ListCarrello.Clear();
+            Response.Redirect("Carrello.aspx");
         }
     }
     public class CarrelloProdotti

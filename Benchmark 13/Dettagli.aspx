@@ -8,7 +8,7 @@
   <div id="Prod" runat="server">
 
     </div>
-        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click"/>
+        <asp:Button ID="Button1" CssClass="btn btn-info" runat="server" Text="Aggiungi al carello" OnClick="Button1_Click"/>
 
     </div>
 

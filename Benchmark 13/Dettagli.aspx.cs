@@ -11,24 +11,8 @@ namespace Benchmark_13
     {
        public static List<Prodotti> ListProdotto = new List<Prodotti>();
         public static List<Prodotti> ListCart = new List<Prodotti>();
-        public static List<Dettagli> Lista = new List<Dettagli>();
+        public static List<Prodotti> Lista = new List<Prodotti>();
 
-        public int Id { get; set; }
-        public string Image { get; set; }
-        public string NomeProdotto { get; set; }
-        public string Descrizione { get; set; }
-        public double Prezzo { get; set; }
-
-        public Dettagli() { }
-        public Dettagli(string nomeProdotto, string descrizione, double prezzo, string image, int id)
-        {
-            NomeProdotto = nomeProdotto;
-            Descrizione = descrizione;
-            Prezzo = prezzo;
-            Image = image;
-            Id = id;
-        }
-    
    
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -65,11 +49,14 @@ namespace Benchmark_13
            
             ListCart.Add(prod);
 
-            Dettagli prod1 = new Dettagli(prod.NomeProdotto, prod.Descrizione, prod.Prezzo, prod.Image, prod.Id);
+
+           
+            
+            Prodotti prod1 = new Prodotti(prod.NomeProdotto, prod.Descrizione, prod.Prezzo, prod.Image, prod.Id);
             // < a href = 'Carrello.aspx?idProdotto={idProdotto}' class='btn btn-primary'>Aggiungi al Carrello</a>
             Lista.Add(prod1);
-           // Mostra3.DataSource = Lista;
-         //   Mostra3.DataBind();
+            //Mostra3.DataSource = Lista;
+            //Mostra3.DataBind();
 
             Prod.InnerHtml += $"<div class='card' style='width: 18rem;'><img src='{prod.Image}' class='card-img-top' alt='...'>" +
              $"<div class='card-body'>  <h5 class='card-title'>{prod.NomeProdotto}</h5><p class='card-text'>{prod.Prezzo}</p>" +
@@ -81,20 +68,21 @@ namespace Benchmark_13
         {
 
             Session["ListaCarrello"] = ListCart;
-                //int idProdotto = (Convert.ToInt16(Request.QueryString["idProdotto"]));
+            int idprodotto = (Convert.ToInt16(Request.QueryString["idprodotto"]));
 
-               // Prodotti prod = new Prodotti();
-                //foreach (Prodotti item in ListProdotto)
-                //{
-                //    if (item.Id == idProdotto)
-                //    {
-                //        prod = item;
-                   
-                //    }
-                //}
-               // Carrello.ListCarrello.Add(prod);
-             //   ListCart.Add(prod);
-            
+            //Prodotti prod = new Prodotti();
+            //foreach (Prodotti item in ListCart)
+            //{
+
+            //    if (item.Id == idprodotto)
+            //    {
+            //        prod = item;
+
+            //    }
+            //}
+            //Carrello.ListCarrello.Add(prod);
+            //ListCart.Add(prod);
+
         }
 
     }
